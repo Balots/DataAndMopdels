@@ -81,58 +81,42 @@ R²: -0.1060
 
 ## Модель: Random Forest — СКР
 ```
-Traceback (most recent call last):
-  File "/var/lib/jenkins/workspace/Check accuracy/venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
-    return self._engine.get_loc(casted_key)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
-  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
-  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
-  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
-KeyError: 'СКР'
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/var/lib/jenkins/workspace/Check accuracy/check_metrics.py", line 147, in <module>
-    main()
-  File "/var/lib/jenkins/workspace/Check accuracy/check_metrics.py", line 93, in main
-    mask = ~np.isnan(df[args.target]) & ~np.isnan(df['predictions'])
-                     ~~^^^^^^^^^^^^^
-  File "/var/lib/jenkins/workspace/Check accuracy/venv/lib/python3.12/site-packages/pandas/core/frame.py", line 4113, in __getitem__
-    indexer = self.columns.get_loc(key)
-              ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/var/lib/jenkins/workspace/Check accuracy/venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3819, in get_loc
-    raise KeyError(key) from err
-KeyError: 'СКР'
+====================================================================================================
+Отклонение таргета относительно прогноза:
+RMSE: 0.0531
+MAE: 0.0391
+R²: 0.9628
+Средний СКР: 1.4365
+Относительная ошибка: 3.70%
+====================================================================================================
+Отклонение таргета относительно СРЕДНЕГО:
+RMSE: 0.3311
+MAE: 0.2689
+R²: -0.4436
+Средний СКР: 1.4365
+Относительная ошибка: 23.05%
+====================================================================================================
+{"RMSE": 0.05314318019838272, "MAE": 0.03907372708764437, "R2": 0.9628050116490402, "relative_error": 3.6995661890766014, "relative_average": 23.04800988295015}
 ```
 
 ## Модель: Random Forest — ОПЖ
 ```
-Traceback (most recent call last):
-  File "/var/lib/jenkins/workspace/Check accuracy/venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
-    return self._engine.get_loc(casted_key)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
-  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
-  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
-  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
-KeyError: 'ОПЖ'
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/var/lib/jenkins/workspace/Check accuracy/check_metrics.py", line 147, in <module>
-    main()
-  File "/var/lib/jenkins/workspace/Check accuracy/check_metrics.py", line 93, in main
-    mask = ~np.isnan(df[args.target]) & ~np.isnan(df['predictions'])
-                     ~~^^^^^^^^^^^^^
-  File "/var/lib/jenkins/workspace/Check accuracy/venv/lib/python3.12/site-packages/pandas/core/frame.py", line 4113, in __getitem__
-    indexer = self.columns.get_loc(key)
-              ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/var/lib/jenkins/workspace/Check accuracy/venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3819, in get_loc
-    raise KeyError(key) from err
-KeyError: 'ОПЖ'
+====================================================================================================
+Отклонение таргета относительно прогноза:
+RMSE: 1.7823
+MAE: 1.6643
+R²: 0.5312
+Средний ОПЖ: 72.4341
+Относительная ошибка: 2.46%
+====================================================================================================
+Отклонение таргета относительно СРЕДНЕГО:
+RMSE: 2.8435
+MAE: 2.1326
+R²: -0.1932
+Средний ОПЖ: 72.4341
+Относительная ошибка: 3.93%
+====================================================================================================
+{"RMSE": 1.782277351228856, "MAE": 1.664282225610894, "R2": 0.5312267639186696, "relative_error": 2.46054954367381, "relative_average": 3.9255724713872944}
 ```
 
 ## Модель: RNN — СКР
@@ -177,58 +161,42 @@ R²: -0.1080
 
 ## Модель: XGBoost — СКР
 ```
-Traceback (most recent call last):
-  File "/var/lib/jenkins/workspace/Check accuracy/venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
-    return self._engine.get_loc(casted_key)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
-  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
-  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
-  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
-KeyError: 'СКР'
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/var/lib/jenkins/workspace/Check accuracy/check_metrics.py", line 147, in <module>
-    main()
-  File "/var/lib/jenkins/workspace/Check accuracy/check_metrics.py", line 93, in main
-    mask = ~np.isnan(df[args.target]) & ~np.isnan(df['predictions'])
-                     ~~^^^^^^^^^^^^^
-  File "/var/lib/jenkins/workspace/Check accuracy/venv/lib/python3.12/site-packages/pandas/core/frame.py", line 4113, in __getitem__
-    indexer = self.columns.get_loc(key)
-              ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/var/lib/jenkins/workspace/Check accuracy/venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3819, in get_loc
-    raise KeyError(key) from err
-KeyError: 'СКР'
+====================================================================================================
+Отклонение таргета относительно прогноза:
+RMSE: 0.0475
+MAE: 0.0365
+R²: 0.9703
+Средний СКР: 1.4365
+Относительная ошибка: 3.30%
+====================================================================================================
+Отклонение таргета относительно СРЕДНЕГО:
+RMSE: 0.3311
+MAE: 0.2689
+R²: -0.4436
+Средний СКР: 1.4365
+Относительная ошибка: 23.05%
+====================================================================================================
+{"RMSE": 0.047457335419952645, "MAE": 0.036534461649726464, "R2": 0.9703382993416428, "relative_error": 3.303745709005712, "relative_average": 23.04800988295015}
 ```
 
 ## Модель: XGBoost — ОПЖ
 ```
-Traceback (most recent call last):
-  File "/var/lib/jenkins/workspace/Check accuracy/venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3812, in get_loc
-    return self._engine.get_loc(casted_key)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "pandas/_libs/index.pyx", line 167, in pandas._libs.index.IndexEngine.get_loc
-  File "pandas/_libs/index.pyx", line 196, in pandas._libs.index.IndexEngine.get_loc
-  File "pandas/_libs/hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
-  File "pandas/_libs/hashtable_class_helper.pxi", line 7096, in pandas._libs.hashtable.PyObjectHashTable.get_item
-KeyError: 'ОПЖ'
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/var/lib/jenkins/workspace/Check accuracy/check_metrics.py", line 147, in <module>
-    main()
-  File "/var/lib/jenkins/workspace/Check accuracy/check_metrics.py", line 93, in main
-    mask = ~np.isnan(df[args.target]) & ~np.isnan(df['predictions'])
-                     ~~^^^^^^^^^^^^^
-  File "/var/lib/jenkins/workspace/Check accuracy/venv/lib/python3.12/site-packages/pandas/core/frame.py", line 4113, in __getitem__
-    indexer = self.columns.get_loc(key)
-              ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/var/lib/jenkins/workspace/Check accuracy/venv/lib/python3.12/site-packages/pandas/core/indexes/base.py", line 3819, in get_loc
-    raise KeyError(key) from err
-KeyError: 'ОПЖ'
+====================================================================================================
+Отклонение таргета относительно прогноза:
+RMSE: 1.6297
+MAE: 1.5384
+R²: 0.6081
+Средний ОПЖ: 72.4341
+Относительная ошибка: 2.25%
+====================================================================================================
+Отклонение таргета относительно СРЕДНЕГО:
+RMSE: 2.8435
+MAE: 2.1326
+R²: -0.1932
+Средний ОПЖ: 72.4341
+Относительная ошибка: 3.93%
+====================================================================================================
+{"RMSE": 1.6296517189554618, "MAE": 1.5383931202608003, "R2": 0.6080760260726856, "relative_error": 2.2498399537301936, "relative_average": 3.9255724713872944}
 ```
 
 ## Диаграмма относительных ошибок
